@@ -1,6 +1,4 @@
-import { Button } from "@neup/components/ui/button";
 import { LinkButton } from '@neup/components/ui/link-button';
-import Link from "next/link";
 import { Handshake, Briefcase } from "lucide-react";
 
 export function Partnerships() {
@@ -19,7 +17,7 @@ export function Partnerships() {
                 <Handshake className="mr-2 h-5 w-5" />
                 Partner With Us
               </LinkButton>
-            <LinkButton variant="secondary" size="lg" href="mailto:careers@neup.group">
+            <LinkButton variant="solid" size="lg" href="/careers">
                 <Briefcase className="mr-2 h-5 w-5" />
                 Explore Careers
               </LinkButton>
