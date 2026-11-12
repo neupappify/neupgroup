@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, BarChart, ShieldCheck, Settings, ArrowRight, Star, DollarSign, BookOpen, Layers } from "lucide-react";
 import Link from "next/link";
@@ -94,8 +94,8 @@ export default function LedgerPage() {
                       Track every transaction, manage finances, and gain insights—effortlessly with Neup.Ledger.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Get Started for Free</Button>
-                      <Button size="lg" variant="outline">See It in Action</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Get Started for Free</LinkButton>
+                      <LinkButton href="#features" size="lg" variant="outline">See It in Action</LinkButton>
                     </div>
                      <p className="text-sm mt-6 text-muted-foreground flex items-center gap-2"><ShieldCheck className="h-4 w-4 text-chart-2"/> Secure, encrypted, and compliant with industry standards.</p>
                 </div>
@@ -114,7 +114,7 @@ export default function LedgerPage() {
         </section>
 
         {/* 2. Key Features Section */}
-        <section className="section-padding">
+        <section id="features" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">All-in-One Financial Management</h2>
@@ -218,8 +218,8 @@ export default function LedgerPage() {
               Join businesses that trust Neup.Ledger to simplify their accounting and reporting.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Get Started for Free</Button>
-              <Button size="lg" variant="outline">Book a Demo</Button>
+              <LinkButton href="/account/auth/start" size="lg">Get Started for Free</LinkButton>
+              <LinkButton href="/contact" size="lg" variant="outline">Book a Demo</LinkButton>
             </div>
           </div>
         </section>

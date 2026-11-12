@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, ArrowRight, Rss, Layers, Globe, Cpu, BookOpen, Video, Mic } from "lucide-react";
 import Link from "next/link";
@@ -94,8 +94,8 @@ export default function NewsPage() {
                       Neup.News delivers the latest stories, insights, and updates—fast, reliable, and in one place.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Read the Latest News</Button>
-                      <Button size="lg" variant="outline">Subscribe Now</Button>
+                      <LinkButton href="/blog" size="lg">Read the Latest News</LinkButton>
+                      <LinkButton href="mailto:contact@neup.group?subject=Subscribe%20to%20Neup" size="lg" variant="outline">Subscribe Now</LinkButton>
                     </div>
                      <p className="text-sm mt-6 text-muted-foreground">Trusted news from verified sources, curated for you.</p>
                 </div>
@@ -114,7 +114,7 @@ export default function NewsPage() {
         </section>
 
         {/* 2. Key Features Section */}
-        <section className="section-padding">
+        <section id="features" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Everything You Need in One News Platform</h2>
@@ -217,8 +217,8 @@ export default function NewsPage() {
               Subscribe or start reading now to never miss an important story.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Read the Latest News</Button>
-              <Button size="lg" variant="outline">Subscribe Now</Button>
+              <LinkButton href="/blog" size="lg">Read the Latest News</LinkButton>
+              <LinkButton href="mailto:contact@neup.group?subject=Subscribe%20to%20Neup" size="lg" variant="outline">Subscribe Now</LinkButton>
             </div>
           </div>
         </section>

@@ -1,7 +1,7 @@
 
 import type { Metadata } from 'next';
 import { Card, CardContent, CardHeader, CardTitle } from "@neup/components/ui/card";
-import { Button } from '@neup/components/ui/button';
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Download } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -53,12 +53,10 @@ export default function CompliancePage() {
                 </CardHeader>
                 <CardContent className="grid sm:grid-cols-2 gap-4">
                     {legalDocuments.map(doc => (
-                        <a href={doc.href} key={doc.name} target="_blank" rel="noopener noreferrer">
-                             <Button variant="outline" className="w-full justify-between h-12">
+                        <LinkButton href={doc.href} key={doc.name} target="_blank" rel="noopener noreferrer" variant="outline" className="w-full justify-between h-12">
                                 {doc.name}
                                 <Download className="h-4 w-4" />
-                            </Button>
-                        </a>
+                        </LinkButton>
                     ))}
                 </CardContent>
             </Card>

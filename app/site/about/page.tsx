@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, Zap, Palette, Smartphone, Rocket, Shield, ArrowRight, Star, MousePointerClick } from "lucide-react";
 import Link from "next/link";
@@ -100,8 +100,8 @@ export default function SitePage() {
                       Launch your business, portfolio, or project online with Neup.Site’s powerful, easy-to-use website builder.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Start Building Your Site</Button>
-                      <Button size="lg" variant="outline">Explore Templates</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Start Building Your Site</LinkButton>
+                      <LinkButton href="#templates" size="lg" variant="outline">Explore Templates</LinkButton>
                     </div>
                 </div>
                 <div className="flex justify-center">
@@ -162,7 +162,7 @@ export default function SitePage() {
         </section>
 
         {/* 4. Featured Templates Section */}
-        <section className="section-padding">
+        <section id="templates" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Websites Designed for Every Purpose</h2>
@@ -186,7 +186,7 @@ export default function SitePage() {
                     <CarouselNext className="hidden sm:flex" />
                 </Carousel>
                 <div className="text-center mt-12">
-                    <Button variant="outline">Explore All Templates</Button>
+                    <LinkButton href="#templates" variant="outline">Explore All Templates</LinkButton>
                 </div>
             </div>
         </section>
@@ -232,8 +232,8 @@ export default function SitePage() {
               Join thousands of creators who trust Neup.Site to launch their online presence.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Start Building <ArrowRight className="ml-2 h-4 w-4"/></Button>
-              <Button size="lg" variant="outline">See Templates</Button>
+              <LinkButton href="/account/auth/start" size="lg">Start Building <ArrowRight className="ml-2 h-4 w-4"/></LinkButton>
+              <LinkButton href="#templates" size="lg" variant="outline">See Templates</LinkButton>
             </div>
           </div>
         </section>

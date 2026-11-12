@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@neup
 import { ArrowRight, Rss } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Button } from '@neup/components/ui/button';
+import { LinkButton } from '@neup/components/ui/link-button';
 
 export const metadata: Metadata = {
   title: 'Neup.Blog',
@@ -52,16 +52,16 @@ export default function BlogPage() {
               Insights, stories, and updates from the Neup Group team. We write about technology, design, business, and building for the future.
             </p>
              <div className="mt-8">
-              <Button>
+              <LinkButton href="mailto:contact@neup.group?subject=Subscribe%20to%20Neup">
                 <Rss className="mr-2 h-4 w-4" />
                 Subscribe to our feed
-              </Button>
+              </LinkButton>
             </div>
           </div>
         </section>
 
         {/* Blog Grid Section */}
-        <section className="section-padding">
+        <section id="articles" className="section-padding">
             <div className="container">
               <h2 className="font-headline text-3xl font-bold mb-8">Featured Articles</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -91,10 +91,10 @@ export default function BlogPage() {
                 ))}
               </div>
                <div className="mt-12 text-center">
-                    <Button variant="outline">
+                    <LinkButton href="#articles" variant="outline">
                         View All Articles
                         <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    </LinkButton>
                 </div>
             </div>
         </section>

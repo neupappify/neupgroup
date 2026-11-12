@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, Search, Users, ShieldCheck, Handshake, ArrowRight, Building, MapPin, DollarSign, Home, KeyRound } from "lucide-react";
 import Link from "next/link";
@@ -105,14 +106,14 @@ export default function EstatePage() {
                   Buy, Sell, or Rent with confidence—trusted listings, verified agents, and smart tools at your fingertips.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                  <Button size="lg">Browse Properties</Button>
-                  <Button size="lg" variant="secondary">List Your Property</Button>
+                  <LinkButton href="#featured-properties" size="lg">Browse Properties</LinkButton>
+                  <LinkButton href="/contact" size="lg" variant="secondary">List Your Property</LinkButton>
                 </div>
             </div>
             <Card className="mt-12 lg:mt-16 p-4 max-w-4xl mx-auto shadow-xl">
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
-                    <Input placeholder="Enter city or area" className="sm:col-span-2 lg:col-span-1"/>
-                    <Select>
+                <form action="/estate/about" method="get" className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-center">
+                    <Input name="location" placeholder="Enter city or area" className="sm:col-span-2 lg:col-span-1"/>
+                    <Select name="propertyType">
                         <SelectTrigger><SelectValue placeholder="Property Type" /></SelectTrigger>
                         <SelectContent>
                             <SelectItem value="house">House</SelectItem>
@@ -121,7 +122,7 @@ export default function EstatePage() {
                             <SelectItem value="commercial">Commercial</SelectItem>
                         </SelectContent>
                     </Select>
-                     <Select>
+                     <Select name="priceRange">
                         <SelectTrigger><SelectValue placeholder="Price Range" /></SelectTrigger>
                         <SelectContent>
                             <SelectItem value="<50l">Under 50 Lakh</SelectItem>
@@ -130,14 +131,14 @@ export default function EstatePage() {
                             <SelectItem value=">3cr">Above 3 Cr</SelectItem>
                         </SelectContent>
                     </Select>
-                    <Button className="w-full lg:w-auto"><Search className="mr-2 h-4 w-4"/> Search</Button>
-                </div>
+                    <Button type="submit" className="w-full lg:w-auto"><Search className="mr-2 h-4 w-4"/> Search</Button>
+                </form>
             </Card>
           </div>
         </section>
 
         {/* 2. Featured Listings Section */}
-        <section className="section-padding">
+        <section id="featured-properties" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Start Your Property Journey</h2>
@@ -158,7 +159,7 @@ export default function EstatePage() {
                                </CardHeader>
                                <CardContent className="flex justify-between items-center">
                                    <p className="text-lg font-bold text-primary">{prop.price}</p>
-                                   <Button variant="ghost" size="sm">View Details <ArrowRight className="ml-2 h-4 w-4"/></Button>
+                                   <LinkButton href="#featured-properties" variant="ghost" size="sm">View Details <ArrowRight className="ml-2 h-4 w-4"/></LinkButton>
                                </CardContent>
                             </Card>
                           </CarouselItem>
@@ -168,7 +169,7 @@ export default function EstatePage() {
                     <CarouselNext className="hidden sm:flex" />
                 </Carousel>
                 <div className="text-center mt-12">
-                    <Button variant="outline">View All Properties</Button>
+                    <LinkButton href="#featured-properties" variant="outline">View All Properties</LinkButton>
                 </div>
             </div>
         </section>
@@ -257,8 +258,8 @@ export default function EstatePage() {
               Join thousands of satisfied clients and discover your perfect property today.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Browse Properties</Button>
-              <Button size="lg" variant="secondary">List Your Property</Button>
+              <LinkButton href="#featured-properties" size="lg">Browse Properties</LinkButton>
+              <LinkButton href="/contact" size="lg" variant="secondary">List Your Property</LinkButton>
             </div>
           </div>
         </section>

@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, ArrowRight, Gift, Users, DollarSign, UserPlus } from "lucide-react";
 import Link from "next/link";
@@ -74,7 +74,7 @@ export default function ReferralsPage() {
                 Helping others has never been this rewarding. Invite clients, and get paid when they work with us.
               </p>
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                <Button size="lg">Start Referring & Earning</Button>
+                <LinkButton href="/account/auth/start?type=referral" size="lg">Start Referring & Earning</LinkButton>
               </div>
           </div>
         </section>
@@ -133,7 +133,7 @@ export default function ReferralsPage() {
                 ))}
             </div>
             <div className="mt-10">
-              <Button size="lg">Start Referring & Earning</Button>
+              <LinkButton href="/account/auth/start?type=referral" size="lg">Start Referring & Earning</LinkButton>
             </div>
           </div>
         </section>

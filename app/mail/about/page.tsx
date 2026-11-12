@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
 import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { Check, Shield, Zap, Inbox, Lock, ArrowRight } from "lucide-react";
@@ -95,7 +94,7 @@ export default function MailPage() {
         </section>
 
         {/* Features Section */}
-        <section id="features" className="section-padding">
+        <section className="section-padding">
           <div className="container">
             <div className="mb-12 text-center">
               <h2 className="font-headline text-3xl md:text-4xl font-bold">A Better Email Experience</h2>
@@ -149,9 +148,9 @@ export default function MailPage() {
                                         </li>
                                     ))}
                                 </ul>
-                                <Button className="w-full" variant={tier.popular ? 'default' : 'outline'}>
+                                <LinkButton href="/account/auth/start" className="w-full" variant={tier.popular ? 'default' : 'outline'}>
                                     {tier.cta}
-                                </Button>
+                                </LinkButton>
                             </CardContent>
                         </Card>
                     ))}

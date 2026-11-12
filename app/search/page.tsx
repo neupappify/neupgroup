@@ -1,6 +1,7 @@
 
 import type { Metadata } from 'next';
 import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, Search, Shield, ArrowRight, Bot, Filter, Globe, Link as LinkIcon } from "lucide-react";
 import Link from "next/link";
@@ -86,7 +87,7 @@ export default function SearchPage() {
     <div className="flex flex-col min-h-screen">
       <main className="flex-1">
         {/* 1. Hero Section */}
-        <section className="relative section-padding">
+        <section id="search" className="relative section-padding">
           <div className="container relative z-10">
              <div className="max-w-3xl text-center mx-auto">
                 <h1 className="font-headline text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter">
@@ -96,10 +97,10 @@ export default function SearchPage() {
                   Neup.Search delivers fast, accurate, and secure search results for everything you need—web, products, or services.
                 </p>
                 <div className="mt-8 max-w-lg mx-auto">
-                    <div className="flex gap-2">
-                        <Input placeholder="Search the web, products, services..." className="h-12 text-base" />
-                        <Button size="lg" className="h-12"><Search className="mr-2 h-5 w-5"/> Search</Button>
-                    </div>
+                    <form action="/search" method="get" className="flex gap-2">
+                        <Input name="q" placeholder="Search the web, products, services..." className="h-12 text-base" />
+                        <Button type="submit" size="lg" className="h-12"><Search className="mr-2 h-5 w-5"/> Search</Button>
+                    </form>
                     <p className="text-xs text-muted-foreground mt-2">Fast, secure, and private—your search, your control.</p>
                 </div>
             </div>
@@ -107,7 +108,7 @@ export default function SearchPage() {
         </section>
 
         {/* 2. Key Features Section */}
-        <section className="section-padding">
+        <section id="features" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Powerful Search, Smarter Results</h2>
@@ -129,7 +130,7 @@ export default function SearchPage() {
         </section>
 
         {/* 3. How It Works Section */}
-        <section className="section-padding">
+        <section id="how-it-works" className="section-padding">
           <div className="container max-w-5xl">
             <div className="text-center mb-16">
               <h2 className="font-headline text-3xl md:text-4xl font-bold">Search Smarter in 3 Steps</h2>
@@ -211,8 +212,8 @@ export default function SearchPage() {
               Join thousands of users who rely on Neup.Search for accurate, fast, and secure results.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Start Searching Now</Button>
-              <Button size="lg" variant="outline">See How It Works</Button>
+              <LinkButton href="/account/auth/start" size="lg">Start Searching Now</LinkButton>
+              <LinkButton href="#how-it-works" size="lg" variant="outline">See How It Works</LinkButton>
             </div>
           </div>
         </section>

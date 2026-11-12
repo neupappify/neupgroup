@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, ShieldCheck, Users, Upload, ArrowRight, Heart, Share2 } from "lucide-react";
 import Link from "next/link";
@@ -90,8 +90,8 @@ export default function HeritagePage() {
                   Build your family tree, connect with relatives, and safeguard your heritage with Neup.Heritage.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                  <Button size="lg">Start Your Family Tree</Button>
-                  <Button size="lg" variant="outline">Learn How It Works</Button>
+                  <LinkButton href="/account/auth/start" size="lg">Start Your Family Tree</LinkButton>
+                  <LinkButton href="#features" size="lg" variant="outline">Learn How It Works</LinkButton>
                 </div>
                  <div className="mt-12 text-center">
                     <p className="text-sm text-muted-foreground flex items-center justify-center gap-2"><ShieldCheck className="h-4 w-4 text-chart-2"/> Your family’s history, private, secure, and preserved forever.</p>
@@ -101,7 +101,7 @@ export default function HeritagePage() {
         </section>
 
         {/* 2. How It Works Section */}
-        <section className="section-padding">
+        <section id="features" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Preserve, Connect, Share in 3 Simple Steps</h2>
@@ -181,8 +181,8 @@ export default function HeritagePage() {
               Create your tree, invite relatives, and safeguard your heritage for generations to come.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Start Your Family Tree <ArrowRight className="ml-2 h-4 w-4"/></Button>
-              <Button size="lg" variant="outline">See Sample Trees</Button>
+              <LinkButton href="/account/auth/start" size="lg">Start Your Family Tree <ArrowRight className="ml-2 h-4 w-4"/></LinkButton>
+              <LinkButton href="#features" size="lg" variant="outline">See Sample Trees</LinkButton>
             </div>
           </div>
         </section>

@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, Users, Wallet, UserPlus, TrendingUp, BarChart, ArrowRight, Star } from "lucide-react";
 import Link from "next/link";
@@ -94,8 +94,8 @@ export default function HRPage() {
                       Neup.HR helps you manage employees, payroll, recruitment, and performance—all in one place.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Get Started Free</Button>
-                      <Button size="lg" variant="outline">Request a Demo</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Get Started Free</LinkButton>
+                      <LinkButton href="/contact" size="lg" variant="outline">Request a Demo</LinkButton>
                     </div>
                      <p className="text-sm mt-6 text-muted-foreground flex items-center gap-2"><CheckCircle className="h-4 w-4 text-chart-2"/> Secure, compliant, and tailored for Nepali businesses.</p>
                 </div>
@@ -218,8 +218,8 @@ export default function HRPage() {
               Join businesses that trust Neup.HR to simplify HR processes and improve employee experience.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Get Started Free</Button>
-              <Button size="lg" variant="outline">Book a Demo</Button>
+              <LinkButton href="/account/auth/start" size="lg">Get Started Free</LinkButton>
+              <LinkButton href="/contact" size="lg" variant="outline">Book a Demo</LinkButton>
             </div>
           </div>
         </section>

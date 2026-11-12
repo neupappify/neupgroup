@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle } from "@neup/components/ui/card";
 import { CheckCircle, ShieldCheck, Zap, User, Search, MessageSquare, CreditCard, Award, Star, ArrowRight, Rss, Briefcase, Code, Pencil, Megaphone, Users } from "lucide-react";
 import Link from "next/link";
@@ -114,8 +114,8 @@ export default function WorksPage() {
                       Hire skilled freelancers or showcase your expertise—fast, secure, and rewarding.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Start Freelancing</Button>
-                      <Button size="lg" variant="secondary">Hire Talent</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Start Freelancing</LinkButton>
+                      <LinkButton href="/account/auth/start" size="lg" variant="secondary">Hire Talent</LinkButton>
                     </div>
                 </div>
                 <div className="flex justify-center">
@@ -151,7 +151,7 @@ export default function WorksPage() {
               ))}
             </div>
             <div className="text-center mt-16">
-                <Button size="lg" variant="outline">Sign Up Now & Start Working</Button>
+                <LinkButton href="/account/auth/start" size="lg" variant="outline">Sign Up Now & Start Working</LinkButton>
             </div>
           </div>
         </section>
@@ -179,7 +179,7 @@ export default function WorksPage() {
         </section>
 
         {/* 4. Featured Freelancers / Projects Section */}
-        <section className="section-padding">
+        <section id="projects" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Meet Our Top Talent & Projects</h2>
@@ -224,7 +224,7 @@ export default function WorksPage() {
                                             <p className="font-semibold">{project.title}</p>
                                             <p className="text-sm text-muted-foreground">{project.category}</p>
                                         </div>
-                                        <Button variant="ghost" size="sm">View <ArrowRight className="ml-2 h-4 w-4"/></Button>
+                                        <LinkButton href="#projects" variant="ghost" size="sm">View <ArrowRight className="ml-2 h-4 w-4"/></LinkButton>
                                     </CardContent>
                                 </Card>
                             ))}
@@ -275,8 +275,8 @@ export default function WorksPage() {
               Whether you’re looking to hire or work, Neup.Works connects you with the right opportunities.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Start Freelancing</Button>
-              <Button size="lg" variant="secondary">Hire Talent</Button>
+              <LinkButton href="/account/auth/start" size="lg">Start Freelancing</LinkButton>
+              <LinkButton href="/account/auth/start" size="lg" variant="secondary">Hire Talent</LinkButton>
             </div>
           </div>
         </section>

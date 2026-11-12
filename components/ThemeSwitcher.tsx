@@ -2,6 +2,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useTheme } from '@/components/ThemeProvider';
+import { Button } from '@neup/components/ui/button';
 
 const colors = [
   "#000000", // Black (Default)
@@ -38,9 +39,11 @@ export function ThemeSwitcher() {
   return (
     <div className="flex flex-wrap items-center gap-3" aria-label="Theme colors">
       {colors.map((color) => (
-        <button
+        <Button
           key={color}
           type="button"
+          variant="plain"
+          size="icon"
           aria-label={`Use ${color} theme`}
           aria-pressed={themeColor === color}
           className={`h-9 w-9 rounded-full border-2 p-0.5 transition-all ${
@@ -52,7 +55,7 @@ export function ThemeSwitcher() {
             className="block h-full w-full rounded-full border border-black/10"
             style={{ backgroundColor: color }}
           />
-        </button>
+        </Button>
       ))}
     </div>
   );

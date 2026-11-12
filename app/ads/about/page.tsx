@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, Target, BarChart, Settings, ArrowRight, Rocket, UserCheck, Search } from "lucide-react";
 import Link from "next/link";
@@ -94,8 +94,8 @@ export default function AdsPage() {
                       Neup.Ads helps you run high-performing ads across digital channels with precision targeting and measurable results.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Start Advertising Now</Button>
-                      <Button size="lg" variant="outline">Request a Demo</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Start Advertising Now</LinkButton>
+                      <LinkButton href="/contact" size="lg" variant="outline">Request a Demo</LinkButton>
                     </div>
                      <p className="text-sm mt-6 text-muted-foreground">Maximize your reach, optimize your budget, and grow your business.</p>
                 </div>
@@ -217,8 +217,8 @@ export default function AdsPage() {
               Join businesses that trust Neup.Ads to maximize their advertising impact and ROI.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Start Advertising Now</Button>
-              <Button size="lg" variant="outline">Request a Demo</Button>
+              <LinkButton href="/account/auth/start" size="lg">Start Advertising Now</LinkButton>
+              <LinkButton href="/contact" size="lg" variant="outline">Request a Demo</LinkButton>
             </div>
           </div>
         </section>

@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { ArrowRight, CheckCircle, FolderTree, ShieldCheck, Users, History, Link2, Bot, Folder, GitBranch, Share2 } from "lucide-react";
 import Link from "next/link";
@@ -57,8 +57,8 @@ export default function DrivePage() {
                       Neup.Drive is a structured workspace for storing, managing, and sharing files across teams, ventures, and systems—without chaos.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Start using Neup.Drive</Button>
-                      <Button size="lg" variant="outline">See how it works <ArrowRight className="ml-2 h-4 w-4"/></Button>
+                      <LinkButton href="/account/auth/start" size="lg">Start using Neup.Drive</LinkButton>
+                      <LinkButton href="#features" size="lg" variant="outline">See how it works <ArrowRight className="ml-2 h-4 w-4"/></LinkButton>
                     </div>
                 </div>
                 <div className="flex justify-center">
@@ -76,7 +76,7 @@ export default function DrivePage() {
         </section>
 
         {/* 2. Problem Section */}
-        <section className="section-padding">
+        <section id="features" className="section-padding">
             <div className="container max-w-5xl text-center">
                 <h2 className="font-headline text-3xl md:text-4xl font-bold">Cloud storage was built for files. Not for teams.</h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
@@ -220,7 +220,7 @@ export default function DrivePage() {
             </h2>
              <p className="mt-4 text-muted-foreground">Built for teams that think long-term.</p>
             <div className="mt-8">
-              <Button size="lg">Get started with Neup.Drive</Button>
+              <LinkButton href="/account/auth/start" size="lg">Get started with Neup.Drive</LinkButton>
             </div>
           </div>
         </section>

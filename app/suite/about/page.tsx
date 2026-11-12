@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, ArrowRight, Layers, BarChart, Users, DollarSign, Briefcase, Heart, Cpu, GitBranch, ChevronsRight } from "lucide-react";
 import Link from "next/link";
@@ -91,8 +91,8 @@ export default function SuitePage() {
                       Neup.Suite brings CRM, HR, Ledger, Project Management, and more together—streamline your operations and grow smarter.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Get Started Today</Button>
-                      <Button size="lg" variant="outline">See the Suite in Action</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Get Started Today</LinkButton>
+                      <LinkButton href="#features" size="lg" variant="outline">See the Suite in Action</LinkButton>
                     </div>
                      <p className="text-sm mt-6 text-muted-foreground flex items-center gap-2"><CheckCircle className="h-4 w-4 text-chart-2"/> Trusted by Nepali businesses for seamless operations and growth.</p>
                 </div>
@@ -111,7 +111,7 @@ export default function SuitePage() {
         </section>
         
         {/* 2. Why Neup.Suite Section */}
-        <section className="section-padding">
+        <section id="features" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Why Choose Neup.Suite?</h2>
@@ -182,7 +182,7 @@ export default function SuitePage() {
                     </Card>
                 </div>
                 <div className="text-center mt-12">
-                  <Button variant="outline">Learn More About Modules</Button>
+                  <LinkButton href="#features" variant="outline">Learn More About Modules</LinkButton>
                 </div>
             </div>
         </section>
@@ -228,8 +228,8 @@ export default function SuitePage() {
               Join businesses that trust Neup.Suite to simplify workflows, increase productivity, and grow smarter.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Get Started</Button>
-              <Button size="lg" variant="outline">Book a Demo</Button>
+              <LinkButton href="/account/auth/start" size="lg">Get Started</LinkButton>
+              <LinkButton href="/contact" size="lg" variant="outline">Book a Demo</LinkButton>
             </div>
           </div>
         </section>

@@ -1,6 +1,6 @@
 
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { HandHeart, BookOpen, Users, Building, ArrowRight, Heart, DollarSign, Award, BookUser } from "lucide-react";
 import Link from "next/link";
@@ -101,8 +101,8 @@ export default function FoundationPage() {
                   At Neup.Foundation, a part of every transaction and profit goes directly to empowering communities, students, and industries across Nepal.
                 </p>
                 <div className="mt-8 flex flex-wrap gap-4">
-                  <Button size="lg">Join Our Mission</Button>
-                  <Button size="lg" variant="outline">Learn How We Give</Button>
+                  <LinkButton href="/account/auth/start" size="lg">Join Our Mission</LinkButton>
+                  <LinkButton href="#participation" size="lg" variant="outline">Learn How We Give</LinkButton>
                 </div>
                  <div className="mt-12">
                     <div className="inline-block bg-primary/10 border border-primary/20 text-primary font-semibold px-4 py-2 rounded-lg">
@@ -133,7 +133,7 @@ export default function FoundationPage() {
         </section>
 
         {/* 3. Our Impact Section */}
-        <section className="section-padding">
+        <section id="impact" className="section-padding">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-headline text-3xl md:text-4xl font-bold">See the Difference Your Support Makes</h2>
@@ -150,7 +150,7 @@ export default function FoundationPage() {
         </section>
 
         {/* 4. How You Can Participate Section */}
-        <section className="section-padding">
+        <section id="participation" className="section-padding">
             <div className="container">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-3xl md:text-4xl font-bold">Every Transaction Creates Change</h2>
@@ -162,7 +162,7 @@ export default function FoundationPage() {
                             {method.icon}
                             <CardTitle className="font-headline text-xl mt-4 mb-2">{method.title}</CardTitle>
                             <CardDescription className="flex-grow">{method.description}</CardDescription>
-                            <Button variant="link" className="mt-4">{method.cta} <ArrowRight className="ml-2 h-4 w-4"/></Button>
+                            <LinkButton href={method.cta === "Explore Ventures" ? "/about/ventures" : method.cta === "See Projects" ? "/about/ventures" : "/contact"} variant="link" className="mt-4">{method.cta} <ArrowRight className="ml-2 h-4 w-4"/></LinkButton>
                         </Card>
                     ))}
                 </div>
@@ -210,8 +210,8 @@ export default function FoundationPage() {
               Every transaction, every contribution, every resource matters. Join us in building a stronger, empowered Nepal.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Contribute Now</Button>
-              <Button size="lg" variant="outline">Learn More About Our Impact</Button>
+              <LinkButton href="/account/auth/start" size="lg">Contribute Now</LinkButton>
+              <LinkButton href="#impact" size="lg" variant="outline">Learn More About Our Impact</LinkButton>
             </div>
           </div>
         </section>

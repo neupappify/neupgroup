@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Button } from "@neup/components/ui/button";
+import { LinkButton } from '@neup/components/ui/link-button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@neup/components/ui/card";
 import { CheckCircle, ArrowRight, BarChart, LayoutDashboard, FileText, GitBranch, Cpu } from "lucide-react";
 import Link from "next/link";
@@ -94,8 +94,8 @@ export default function AnalyticsPage() {
                       Neup.Analytics provides real-time insights and actionable reports to grow your business efficiently.
                     </p>
                     <div className="mt-8 flex flex-wrap gap-4">
-                      <Button size="lg">Get Started Free</Button>
-                      <Button size="lg" variant="outline">Request a Demo</Button>
+                      <LinkButton href="/account/auth/start" size="lg">Get Started Free</LinkButton>
+                      <LinkButton href="/contact" size="lg" variant="outline">Request a Demo</LinkButton>
                     </div>
                      <p className="text-sm mt-6 text-muted-foreground">Accurate, real-time, and easy-to-understand analytics for every business.</p>
                 </div>
@@ -217,8 +217,8 @@ export default function AnalyticsPage() {
               Join businesses that rely on Neup.Analytics to unlock insights and drive growth.
             </p>
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <Button size="lg">Get Started Free</Button>
-              <Button size="lg" variant="outline">Request a Demo</Button>
+              <LinkButton href="/account/auth/start" size="lg">Get Started Free</LinkButton>
+              <LinkButton href="/contact" size="lg" variant="outline">Request a Demo</LinkButton>
             </div>
           </div>
         </section>
