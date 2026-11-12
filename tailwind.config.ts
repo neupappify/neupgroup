@@ -22,10 +22,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        body: ['var(--font-outfit)'],
-        headline: ['var(--font-outfit)'],
-        sans: ['var(--font-outfit)'],
-        code: ['var(--font-jetbrains-mono)'],
+        body: ['Outfit', 'sans-serif'],
+        headline: ['Outfit', 'sans-serif'],
+        sans: ['Outfit', 'sans-serif'],
+        code: ['JetBrains Mono', 'monospace'],
       },
       colors: {
         background: 'rgb(from var(--background) r g b / <alpha-value>)',

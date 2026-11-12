@@ -380,6 +380,7 @@
   }
   body {
     @apply text-foreground font-normal;
+    font-family: 'Outfit', sans-serif;
     background-color: var(--section-odd-background);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
