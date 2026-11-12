@@ -1,0 +1,8 @@
+{
+    "native.cache": 
+    {
+        "type": "redis",
+        "interactionLayer": "ioredis",
+        "isRequired": true
+    }
+}
