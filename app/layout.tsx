@@ -1,5 +1,6 @@
 
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { headers } from 'next/headers';
 import './globals.css';
 import { getAnalyticsContext, logPageActivity } from '@/analytics';
@@ -53,14 +54,14 @@ export default async function RootLayout({
           </SessionProvider>
         </ThemeProvider>
 
-        <script
+        <Script
           src="https://neupgroup.com/analytics/bridge/sdk.v1/tracker"
           data-context-id={signedContextId}
           data-project-id="cmtx8ocvh0000bup9m18a09z1"
           data-collect="pageview"
           data-cookie-keys={"[]"}
           data-server-fields={JSON.stringify({})}
-          defer
+          strategy="afterInteractive"
         />
 
 
