@@ -1,16 +1,22 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { logica } from '@neup/logica';
-import type { SitesMemberDirectoryItem, SitesMemberListResponseBody } from '@neup/logica/sites';
+import type { PeopleMember, PeopleMemberResponseBody } from '@neup/logica/people/members';
 
-async function getMember(slug: string): Promise<SitesMemberDirectoryItem | undefined> {
-  const response = await logica.sites().members.get();
-  const body = response.body as SitesMemberListResponseBody;
-  return body.success && Array.isArray(body.members)
-    ? body.members.find((member) => member.slug === slug)
-    : undefined;
+// Find a member by route slug from the public Sites people directory.
+async function getMember(slug: string): Promise<PeopleMember | undefined> {
+  try {
+    const response = await logica.sites().people.members.get();
+    const body = response.body as PeopleMemberResponseBody;
+    return response.ok && body.success && Array.isArray(body.data)
+      ? body.data.find((member) => member.slug === slug)
+      : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
+// Render a member profile or show the not-found page when no slug matches.
 export default async function MemberPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const member = await getMember(slug);
@@ -25,7 +31,6 @@ export default async function MemberPage({ params }: { params: Promise<{ slug: s
         </div>
         <h1 className="mt-8 font-headline text-4xl font-bold tracking-tight">{member.name}</h1>
         <p className="mt-2 text-xl font-semibold text-primary">{member.role}</p>
-        {member.email ? <p className="mt-6 text-muted-foreground">{member.email}</p> : null}
       </div>
     </main>
   );
