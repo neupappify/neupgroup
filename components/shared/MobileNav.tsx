@@ -106,7 +106,7 @@ export function MobileNav() {
         )}
       >
         {shouldRenderContent ? (
-          <div className="container flex h-full flex-col overflow-hidden px-4 pb-8 pt-8">
+          <div className="container flex h-full flex-col overflow-hidden pb-8 pt-8">
             <nav className="flex flex-1 flex-col gap-6 overflow-hidden">
               {navLinks.map((link, index) => (
                 <Link

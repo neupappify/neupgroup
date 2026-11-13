@@ -12,10 +12,6 @@ const heroImage = {
 export function Hero() {
   return (
     <section className="hero-section-padding relative w-full overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-full">
-        <div className="absolute w-96 h-96 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-blob"></div>
-        <div className="absolute w-96 h-96 bg-secondary rounded-full right-0 bottom-0 translate-x-1/2 translate-y-1/2 blur-3xl animate-blob" style={{ animationDelay: '2s' }}></div>
-      </div>
       <div className="container px-4 md:px-6 relative">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div className="flex flex-col items-start space-y-6 text-left">
