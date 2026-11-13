@@ -1,6 +1,8 @@
 
 import { Hero } from '@/components/sections/Hero';
 import { CompanyOverview } from '@/components/sections/CompanyOverview';
+import { OurProgress } from '@/components/sections/OurProgress';
+import { EcosystemOverview } from '@/components/sections/EcosystemOverview';
 import { VenturePortfolio } from '@/components/sections/VenturePortfolio';
 import { Capabilities } from '@/components/sections/Capabilities';
 import { Vision } from '@/components/sections/Vision';
@@ -19,7 +21,9 @@ export default async function Home() {
   return (
     <>
       <Hero />
+      <OurProgress />
       <CompanyOverview />
+      <EcosystemOverview />
       <VenturePortfolio />
       <Capabilities />
       <Vision />

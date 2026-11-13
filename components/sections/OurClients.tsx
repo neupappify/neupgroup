@@ -1,12 +1,19 @@
 
 import { Card, CardContent } from "@neup/components/ui/card";
-import { Briefcase, Landmark, Mountain, Plane, Tag, TrendingUp, ArrowRight } from "lucide-react";
-import { Button } from "@neup/components/ui/button";
+import { Briefcase, Landmark, Mountain, Tag, TrendingUp, ArrowRight, ExternalLink } from "lucide-react";
 import { LinkButton } from '@neup/components/ui/link-button';
-import Link from "next/link";
 import Image from 'next/image';
+import type { ReactNode } from 'react';
 
-const clients = [
+type ClientProfile = {
+  name: string;
+  services?: string;
+  website?: string;
+  icon: string | ReactNode;
+  slug?: string;
+};
+
+export const clientProfiles: ClientProfile[] = [
   {
     name: "Happy Mountain Nepal",
     services: "Neup.Marketing, Neup.Site",
@@ -40,6 +47,16 @@ const clients = [
     services: "Neup.Marketing",
     icon: <TrendingUp className="h-10 w-10 text-primary" />,
   },
+  {
+    name: "Namsari",
+    website: "https://namsari.com",
+    icon: <Mountain className="h-10 w-10 text-primary" />,
+  },
+  {
+    name: "Nepal NOIR",
+    website: "https://boudhastupapolyclinic.com",
+    icon: <Landmark className="h-10 w-10 text-primary" />,
+  },
 ];
 
 export function OurClients() {
@@ -52,34 +69,44 @@ export function OurClients() {
             We are proud to partner with ambitious brands and help them grow.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {clients.map((client) => (
-            <Card key={client.name} className="flex flex-col hover:shadow-lg transition-shadow">
-              <CardContent className="p-6 flex flex-col flex-grow">
-                <div className="flex items-center gap-6 mb-4">
-                  <div className="p-3 bg-primary/10 rounded-lg h-[64px] w-[64px] flex items-center justify-center">
-                    {typeof client.icon === 'string' ? (
-                      <Image src={client.icon} alt={`${client.name} logo`} width={40} height={40} className="object-contain" />
-                    ) : (
-                      client.icon
-                    )}
-                  </div>
-                  <div>
-                    <p className="text-xl font-bold">{client.name}</p>
-                    <p className="text-muted-foreground">Services: {client.services}</p>
-                  </div>
-                </div>
-                {client.slug && (
-                  <div className="mt-auto pt-4 border-t border-border">
-                    <LinkButton variant="link" className="p-0 h-auto" href={`/case/${client.slug}`}>
-                        Read Case
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </LinkButton>
-                  </div>
-                )}
-              </CardContent>
-            </Card>
-          ))}
+        <div className="client-marquee relative overflow-hidden" aria-label="Client portfolio">
+          <div className="client-marquee-track flex w-max">
+            {[false, true].map((isDuplicate) => (
+              <div key={isDuplicate ? "duplicate" : "clients"} className="flex shrink-0 gap-4 pr-4" aria-hidden={isDuplicate} inert={isDuplicate}>
+                {clientProfiles.map((client) => (
+                  <Card key={client.name} className="flex min-h-40 w-[min(78vw,18rem)] shrink-0 flex-col transition-shadow hover:shadow-lg sm:w-72">
+                    <CardContent className="flex flex-1 flex-col p-5">
+                      <div className="mb-4 flex items-center gap-4">
+                        <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-primary/10 p-3">
+                          {typeof client.icon === 'string' ? (
+                            <Image src={client.icon} alt={`${client.name} logo`} width={40} height={40} className="object-contain" />
+                          ) : (
+                            client.icon
+                          )}
+                        </div>
+                        <div>
+                          <p className="text-lg font-bold">{client.name}</p>
+                          {client.services && <p className="mt-1 text-xs text-muted-foreground">{client.services}</p>}
+                        </div>
+                      </div>
+                      <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 border-t border-border pt-3">
+                        {client.website && (
+                          <a href={client.website} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline">
+                            Website <ExternalLink className="h-3.5 w-3.5" />
+                          </a>
+                        )}
+                        {client.slug && (
+                          <LinkButton variant="link" className="h-auto p-0 text-sm" href={`/case/${client.slug}`}>
+                            Case study <ArrowRight className="ml-1 h-4 w-4" />
+                          </LinkButton>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

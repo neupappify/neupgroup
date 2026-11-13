@@ -33,10 +33,10 @@ export function CompanyOverview() {
             </div>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                Neup Group was born from a simple observation: Nepal has immense talent but lacks home-grown digital platforms that solve local problems and compete globally. We are a collective of thinkers, builders, and strategists committed to changing that narrative.
+                We build and operate digital products for people and businesses, starting from problems we understand in Nepal and designing for a wider world. Each venture has its own purpose, audience, and path to market.
               </p>
               <p>
-                We operate with a long-term focus, patiently building systems and products that create compounding value. Our execution prowess is rooted in a deep understanding of technology and a passion for creating exceptional user experiences.
+                Our venture studio brings product strategy, design, engineering, and growth together to take ideas from early exploration through development and operation. We focus on durable products that earn trust and create lasting value.
               </p>
             </div>
           </div>

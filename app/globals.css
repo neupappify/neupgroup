@@ -287,6 +287,41 @@
 }
 
 @layer components {
+  .client-marquee-track {
+    animation: client-marquee-scroll 42s linear infinite;
+  }
+
+  .client-marquee {
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+  }
+
+  .client-marquee:hover .client-marquee-track,
+  .client-marquee:focus-within .client-marquee-track {
+    animation-play-state: paused;
+  }
+
+  @keyframes client-marquee-scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .client-marquee-track {
+      animation: none;
+    }
+
+    .client-marquee-track > div:first-child {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .client-marquee-track > div[aria-hidden="true"] {
+      display: none;
+    }
+  }
+
   .hero-section-padding {
     padding-block: 3rem;
   }
